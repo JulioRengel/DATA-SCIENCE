@@ -1,0 +1,20 @@
+	• Pressionar 'A' incluir uma cela antes.
+	• Pressionar 'B' incluir uma cela depois.
+	• Pressionar 'DD' elimina uma cela.
+ Pressionar Ctrl + Enter == Rum.  
+
+Para importar planillas de excel:
+import pandas as pd
+
+dados = pd.read_csv('Downloads/DATASCIENCE/fifa.csv')
+dados_xlsx = pd.read_excel('Downloads/DATASCIENCE/fifa.xlsx')
+dados_txt = pd.read_csv ('Downloads/DATASCIENCE/fifa.txt', delimiter = '\t')
+dados_html = pd.read_html('https://felipe-aguiar.gitbook.io/dio-java/gitbook/sintaxe/variaveis')
+
+
+#dados.head() mostra as primeiras 5 çlinias 
+dados.tail() mostra as ultimas 5 linhas 
+dados.head(2) Mostra os dois primeiros, aplica igual para o 'tail'
+
+dados.columns --> mostra as colunas que existen na tabela 
+dados.index --> mostra o numero de colunas
