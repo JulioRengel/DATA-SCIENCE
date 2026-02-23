@@ -1,1 +1,35 @@
+import pandas as pd
+
+dados = pd.read_csv('Downloads/DATASCIENCE/fifa.csv')
+#Função "loc"
+dados.loc[dados['Nationality'] == 'Venezuela'] ---> Para filtrar mas dados especificos 
+
+dados.loc[dados['Nationality'] == 35 ]--> filtrar  por anos 
+
+
+#Função sort_values
+
+dados.sort_values('Age', ascending = False) --> filtrar de maior a menor 
+
+#Agregando colunas:
+import pandas as pd
+dados = pd.read_csv('Downloads/DATASCIENCE/fifa.csv')
+
+dados['Total'] = dados['Acceleration'] + dados['Agility'] + dados['Reactions'] 
+dados
+
+#Para filtrar/mostrar colunas especificas 
+dados = dados[['Name','Total']] 
+dados
+dados.sort_values('Total', ascending = False ) --> filtração mas especifica 
+
+
+Salvar em outros formato os dados manipulados:
+import pandas as pd
+
+dados = pd.read_csv('Downloads/DATASCIENCE/fifa.csv')
+
+dados.to_csv('dados1.csv', index = False)
+dados.to_csv('dados.xlsx', index = False)
+dados.to_csv('dados3.txt', index=False, sep='\t')
 
