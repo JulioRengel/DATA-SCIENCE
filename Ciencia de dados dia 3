@@ -1,1 +1,26 @@
+import pandas as pd
+df =  pd.read_csv('house.csv')
+
+filter1 = df.loc[(df['Rooms'] == 3) & (df['Type'] == 'h') & (df['Price'] <= 500000)]
+filter1
+
+----------------------------------------------------------------
+Para filtrar itens dentro de uma colunas, pedindo que ignore as minúsculas ou maiúsculas:
+
+import pandas as pd
+import re
+
+filter2 = df.loc[df['Address'].str.contains('Turner st | Turner Rd', flags=re.I)]
+filter2
+ -------------------------------------------------------
+Filtrações mas especificas: 
+'^' usado para especificar que inicie pelo dado solicitado. 
+
+filter2 = df.loc[df['Address'].str.contains('Turner st | Turner Rd', flags=re.I)]
+filter2
+---------------------------------------------------------------------------------
+Modificando as informações da cela: 
+
+df.loc[df['SellerG'] == 'Julio', 'Method'] = 'Pending' 
+df
 
