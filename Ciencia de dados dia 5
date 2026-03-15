@@ -1,1 +1,99 @@
 
+Somando duas Arrays:
+import numpy as np
+a = np.array([1, 2, 3])
+b = np.array([1, 2, 3])
+
+result = np.add ( a ,b)
+print (result)
+---------------------
+Selecionar itens em Arrays:
+a = np.array([[2, 3, 4, 5] , [6, 7, 8, 9]])
+print (a)
+
+# array (linha, coluna)
+a[1,2]
+
+# array (linha, coluna)
+a[1, -2]
+
+Para mostrar todas as colunas 
+a[0,:] 
+
+Mostrar dados de coluna diferentes
+a[:, 1]. 
+--------------------------------------------------------------------
+Impostando o Dataset:
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+gas = pd.read_csv('gas_prices.csv')
+gas
+-------------------------------------------------
+Criando o primeiro gráfico:
+Impostando o Dataset:
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+plt.plot(gas['Year'],gas['Australia'] )
+plt.plot(gas['Year'],gas['Italy'] )
+plt.plot(gas['Year'],gas['Canada'] )
+
+--------------------------------------------------------
+Adicionando lendas e Ticks:
+Para colocar título no gráfico 
+
+plt.title('Valores do Combustivel em US$')
+
+Agregar nome as linhas:
+
+plt.title('Valores do Combustivel em US$')
+
+plt.plot(gas['Year'],gas['Australia'], label = 'Australia' )
+plt.plot(gas['Year'],gas['Italy'], label = 'Italy' )
+plt.plot(gas['Year'],gas['Canada'], label =  'Canada')
+
+plt.xticks(gas['Year'][::4])#para filtrar de 4 em quantro anos 
+
+plt.legend()
+plt.show()
+------------------------------------------------
+Formatando label e cores:
+plt.title('Valores do Combustivel em US$')
+
+plt.plot(gas['Year'],gas['Australia'],'r.-', label = 'Australia' )
+plt.plot(gas['Year'],gas['Italy'], 'y.-',label = 'Italy' )
+plt.plot(gas['Year'],gas['Canada'], 'b.-',label =  'Canada')
+
+plt.xticks(gas['Year'][::4])#para filtrar de 4 em quantro anos 
+
+plt.xlabel('Years')
+plt.ylabel('US$')
+
+plt.legend()
+plt.show()
+----------------------------------------
+
+Adicionando com o for loop:
+plt.title('Valores do Combustivel em US$')
+
+list_country = ['Australia', 'France', 'Canada']
+
+for country in gas:
+    if country in list_country:
+        plt.plot(gas['Year'], gas[country], label=[country], marker='.')
+    
+        
+plt.xticks(gas['Year'][::2])#para filtrar de 4 em quantro anos 
+
+plt.xlabel('Years')
+plt.ylabel('US$')
+
+plt.legend()
+plt.show()
+-----------------------------------------------------
+Salvar gráficos no MatplotLib:
+
