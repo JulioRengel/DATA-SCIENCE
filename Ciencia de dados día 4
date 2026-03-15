@@ -1,1 +1,57 @@
+df.groupby(['SellerG']).mean() --> saber a media por vendedor
+------------------------------------------------------------------
+df.groupby(['SellerG']).sum().sort_values('Price', ascending = False) --> mostrar quem vendeu mais
+---------------------------------------------------------------
+df.groupby(['SellerG']).sum().sort_values('Price', ascending = False).head(10) ----> filtrar so os primeiros 10s
+
+
+
+
+
+-------------------------------------------------------------------
+
+import numpy as np
+import sys
+
+
+a = [1, 2, 3, 4, 5] # Lista Normal
+b = np.array([1, 2, 3, 4, 5]) # lista array 
+
+print(a)
+print (b)
+
+sys.getsizeof(a) # para saber o tamanho e quanto ocupa a lista de momoria. (tem que importar no inicio 'import sys')
+
+b.nbytes # para saber o tamanho e quanto ocupa o array de momoria. (tem que importar no inicio 'import sys')
+
+--------------------------------------------------------------------------------
+
+
+#Array 1D
+
+d1 = np.array([1, 2, 3])
+print (d1)
+
+d1.shape # para saber o formato do array
+d1.ndim # para saber o numero de dimensão 
+d1.dtype # para saber o tipo de array (Essa aqui é int (intedier (inteiro)))
+-------------------------------------------------------------------------------------------------------
+#Array 2D
+
+d2 = np.array([[1, 2, 3], [4, 5, 6]])
+print (d2)
+
+d2.shape # para saber o formato do array
+d2.ndim # para saber o numero de dimensão 
+d2.dtype # para saber o tipo de array (Essa aqui é int (intedier (inteiro)))
+------------------------------------------------------------------------------------------------------------
+#Array 3D
+
+d3 = np.array([[[1, 2], [3, 4]], 
+               [[5, 6], [7, 8]]])
+print (d3)
+
+d3.shape # para saber o formato do array
+d3.ndim # para saber o numero de dimensão 
+d3.dtype # para saber o tipo de array (Essa aqui é int (intedier (inteiro)))
 
